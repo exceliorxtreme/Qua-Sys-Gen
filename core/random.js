@@ -1,5 +1,5 @@
 // core/random.js
-// Random utilities
+
 
 // pick a random element from a list
 export function rnd(list){
