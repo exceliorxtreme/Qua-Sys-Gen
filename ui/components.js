@@ -1,33 +1,3 @@
-.keyboard-container {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-}
-
-.keyboard-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 50px);
-    gap: 8px;
-}
-
-.key {
-    padding: 12px;
-    font-size: 18px;
-    border-radius: 8px;
-    background: #f0f0f0;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.key:hover {
-    background: #e0e0e0;
-}
-
-.key.special {
-    background: #ffd9d9;
-    border-color: #ff8a8a;
-}
 .module-wrapper {
     width: 100%;
     max-width: 600px;
