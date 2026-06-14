@@ -53,9 +53,10 @@ window.generateSystem = function(mode){
         btn.onclick = () => exportLatex(window._lastLatex);
     }
 
+    // Fix: Delay MathJax rendering until after DOM is fully updated
     setTimeout(() => {
         if(window.MathJax && window.MathJax.typesetPromise){
-            MathJax.typesetPromise();
+            MathJax.typesetPromise().catch((err) => console.log('Typeset failed:', err));
         }
-    }, 0);
+    }, 100);
 };
