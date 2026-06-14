@@ -144,27 +144,27 @@ export function generateLinearQuadratic(X, Y) {
 
         <div class="card">
             <h3>${t("linquad_type1")}</h3>
-            <p>\[
-             \begin{aligned} ${eq1a} \\\ ${eq1b} \end{aligned}
-            \]
+            <p>\\(
+             \\begin{aligned} ${eq1a} \\\\ ${eq1b} \\end{aligned}
+            \\)
 
 </p>
         </div>
 
         <div class="card">
             <h3>${t("linquad_type2")}</h3>
-            <p>\[
-             \begin{aligned} ${eq2a} \\\ ${eq2b} \end{aligned}
-              \]
+            <p>\\(
+             \\begin{aligned} ${eq2a} \\\\ ${eq2b} \\end{aligned}
+              \\)
 
 </p>
         </div>
 
         <div class="card">
             <h3>${t("linquad_type3")}</h3>
-            <p>\[
-            \begin{aligned} ${eq3a} \\\ ${eq3b} \end{aligned}
-            \]
+            <p>\\(
+            \\begin{aligned} ${eq3a} \\\\ ${eq3b} \\end{aligned}
+            \\)
 
 </p>
         </div>
