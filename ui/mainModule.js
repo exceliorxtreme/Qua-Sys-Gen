@@ -1,9 +1,9 @@
-import { t } from "./i18n/i18n.js";
-import { generateHomogeneous } from "./systems/homogeneous.js";
-import { generateSymmetric } from "./systems/symmetric.js";
-import { generateLinearQuadratic } from "./systems/linearQuadratic.js";
-import { parseFraction } from "./core/fractions.js";
-import { exportLatex } from "./systems/homogeneous.js";
+import { t } from "../i18n/i18n.js";
+import { generateHomogeneous } from "../systems/homogeneous.js";
+import { generateSymmetric } from "../systems/symmetric.js";
+import { generateLinearQuadratic } from "../systems/linearQuadratic.js";
+import { parseFraction } from "../core/fractions.js";
+import { exportLatex } from "../systems/homogeneous.js";
 
 export function loadMainModule(mode = "homogeneous"){
     return `
