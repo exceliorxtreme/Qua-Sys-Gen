@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    
+      <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecția 1 — Sisteme de ecuații de gradul II</title>
+
+    <link rel="stylesheet" href="../css/layout.css">
+      <link rel="stylesheet" href="../css/components.css">
+
+    <script>
+    window.MathJax = {
+        tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+        svg: { scale: 1.2 }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+
+<body>
+
+<div class="module-wrapper">
+
+<h1>Lecția 1 — Sisteme de ecuații de gradul II</h1>
+<p class="subtitle">Teorie, exemple rezolvate și exerciții</p>
+
+<hr>
+
+<h2>1. Sisteme reductibile la sisteme omogene</h2>
+
+<h3>Teorie</h3>
+
+<p>
+Un sistem este reductibil la un sistem omogen dacă, printr-o combinație liniară a ecuațiilor,
+se poate elimina termenul liber, obținându-se o ecuație de forma:
+</p>
+
+
+
+\[
+ax^2 + bxy + cy^2 = 0.
+\]
+
+
+
+<p>
+Metoda standard este substituția:
+</p>
+
+
+
+\[
+x = ky,\quad y\neq 0,
+\]
+
+
+
+<p>
+ce conduce la ecuația în \(k\):
+</p>
+
+
+
+\[
+ak^2 + bk + c = 0.
+\]
+
+
+
+<p>
+Valorile lui \(k\) determină direcțiile soluțiilor. Pentru fiecare direcție, se revine în sistemul inițial și se determină valorile lui \(x\) și \(y\).
+</p>
+
+<h3>Exemplu</h3>
+
+<p>Considerăm sistemul:</p>
+
+
+
+\[
+\begin{cases}
+x^2 + 3xy + 2y^2 = 3 \\
+2x^2 - xy + y^2 = 8
+\end{cases}
+\]
+
+
+
+<p>Eliminăm termenii liberi:</p>
+
+
+
+\[
+8(1) - 3(2):\quad 2x^2 + 27xy + 13y^2 = 0.
+\]
+
+
+
+<p>Substituim \(x = ky\):</p>
+
+
+
+\[
+2k^2 + 27k + 13 = 0.
+\]
+
+
+
+
+
+\[
+\Delta = 625 = 25^2.
+\]
+
+
+
+
+
+\[
+k_1 = -\frac12,\quad k_2 = -13.
+\]
+
+
+
+<h4>Cazul 1: \(x = -\frac12 y\)</h4>
+
+
+
+\[
+\frac{y^2}{4} - \frac{3}{2}y^2 + 2y^2 = 3
+\]
+
+
+
+
+
+\[
+\frac34 y^2 = 3 \Rightarrow y^2 = 4.
+\]
+
+
+
+
+
+\[
+y = \pm 2,\quad x = \mp 1.
+\]
+
+
+
+<h4>Cazul 2: \(x = -13y\)</h4>
+
+
+
+\[
+169y^2 - 39y^2 + 2y^2 = 3
+\]
+
+
+
+
+
+\[
+132y^2 = 3 \Rightarrow y^2 = \frac{1}{44}.
+\]
+
+
+
+
+
+\[
+y = \pm \frac{1}{\sqrt{44}},\quad x = \mp \frac{13}{\sqrt{44}}.
+\]
+
+
+
+<h4>Soluții</h4>
+
+
+
+\[
+(-1,2),\ (1,-2),\
+\left(-\frac{13}{\sqrt{44}},\frac{1}{\sqrt{44}}\right),\
+\left(\frac{13}{\sqrt{44}},-\frac{1}{\sqrt{44}}\right).
+\]
+
+
+
+<hr>
+
+<h2>2. Sisteme simetrice</h2>
+
+<h3>Teorie</h3>
+
+<p>
+Un sistem este simetric dacă ecuațiile rămân neschimbate la schimbarea lui \(x\) cu \(y\).
+Forma standard:
+</p>
+
+
+
+\[
+\begin{cases}
+x+y = S \\
+xy = P
+\end{cases}
+\]
+
+
+
+<p>
+Se construiește ecuația:
+</p>
+
+
+
+\[
+t^2 - St + P = 0.
+\]
+
+
+
+<h3>Exemplu</h3>
+
+
+
+\[
+\begin{cases}
+x+y = 7 \\
+xy = 10
+\end{cases}
+\]
+
+
+
+
+
+\[
+t^2 - 7t + 10 = 0 \Rightarrow t = 2,\ 5.
+\]
+
+
+
+
+
+\[
+(2,5),\ (5,2).
+\]
+
+
+
+<hr>
+
+<h2>3. Sisteme cu o ecuație liniară și una pătratică</h2>
+
+<h3>Teorie</h3>
+
+<p>
+Aceste sisteme au forma:
+</p>
+
+
+
+\[
+\begin{cases}
+ax + by = c \\
+\text{ecuație de gradul II}
+\end{cases}
+\]
+
+
+
+<p>
+Metoda standard este substituția: se exprimă una dintre variabile din ecuația liniară și se înlocuiește în ecuația pătratică.
+</p>
+
+<h3>Exemplu</h3>
+
+
+
+\[
+\begin{cases}
+x - 2y = 1 \\
+x^2 - xy + y^2 = 7
+\end{cases}
+\]
+
+
+
+
+
+\[
+x = 1 + 2y.
+\]
+
+
+
+
+
+\[
+(1+2y)^2 - (1+2y)y + y^2 = 7.
+\]
+
+
+
+
+
+\[
+3y^2 + 3y - 6 = 0.
+\]
+
+
+
+
+
+\[
+y = 1,\ -2,\quad x = 3,\ -3.
+\]
+
+
+
+
+
+\[
+(3,1),\ (-3,-2).
+\]
+
+
+
+<hr>
+
+<h2>4. Exerciții propuse</h2>
+
+<ol>
+<li>
+
+
+\[
+\begin{cases}
+x^2 - 2xy + y^2 = 9 \\
+2x^2 - 4xy + 2y^2 = 18
+\end{cases}
+\]
+
+
+</li>
+
+<li>
+
+
+\[
+\begin{cases}
+3x^2 + xy - 4y^2 = 12 \\
+6x^2 + 2xy - 8y^2 = 20
+\end{cases}
+\]
+
+
+</li>
+
+<li>
+
+
+\[
+\begin{cases}
+x+y = 7 \\
+x^2 + y^2 = 29
+\end{cases}
+\]
+
+
+</li>
+
+<li>
+
+
+\[
+\begin{cases}
+x+y = -3 \\
+xy = -10
+\end{cases}
+\]
+
+
+</li>
+
+<li>
+
+
+\[
+\begin{cases}
+x - 2y = 1 \\
+x^2 + y^2 = 25
+\end{cases}
+\]
+
+
+</li>
+
+<li>
+
+
+\[
+\begin{cases}
+3x + y = 4 \\
+x^2 - xy + y^2 = 13
+\end{cases}
+\]
+
+
+</li>
+</ol>
+
+<hr>
+
+<h2>5. Răspunsuri</h2>
+
+<ol>
+<li>$(3,0), (-3,0), (0,3), (0,-3)$</li>
+<li>$(2,1), (-2,-1), (1,-1), (-1,1)$</li>
+<li>$\left(\frac{7+\sqrt{17}}{2},\frac{7-\sqrt{17}}{2}\right)$ și invers</li>
+<li>$(2,-5), (-5,2)$</li>
+<li>$(3,1), (-3,-1)$</li>
+<li>$(2,-2), (-1,7)$</li>
+</ol>
+
+<hr>
+
+<p><b>Notă:</b> Această lecție explică metodele de rezolvare. Generatorul de sisteme din aplicație <u>nu rezolvă sistemele</u>, ci doar generează exerciții pentru profesori, elevi și studenți.</p>
+
+</div>
+
+</body>
+</html>

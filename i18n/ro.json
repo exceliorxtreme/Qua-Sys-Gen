@@ -1,0 +1,33 @@
+{
+    "title": "Generator Sisteme",
+    "subtitle": "Alege un tip de sistem și introdu soluțiile.",
+    "darkMode": "Mod întunecat",
+    "examMode": "Mod examen",
+    "pdf": "PDF",
+    "generate": "Generează sistem",
+    "inputXY": "Introdu soluțiile x și y:",
+    "homogeneous": "Omogene",
+    "symmetric": "Simetrice",
+    "linearQuadratic": "Liniar + Pătratic",
+    "advanced": "Simetric Avansat", 
+    "hom_title": "Sisteme omogene",
+"hom_type1": "1) Sistem omogen — tip I",
+"hom_type2": "2) Sistem omogen — tip II",
+"hom_type3": "3) Sistem omogen — tip III",
+"one_solution": "O soluție",
+"fraction_hint": "Poți introduce și fracții de forma p/q. Interval recomandat: -20 … 20.",
+"input_hint": "Introduceți de la tastatură soluțiile x, y, întregi sau fracții p/q din mulțimea {-20, -19, ..., 19, 20}.",
+"sym_title": "Sisteme simetrice",
+"sym_type1": "Tip 1 (ax + ay + bxy ; cx + cy - axy)",
+"sym_type2": "Tip 2 (ax + ay - bxy ; x² + y² + bx + by)",
+"sym_type3": "Tip 3 (ax + ay ; x³ + y³)",
+"sym_type4": "Tip 4 (ax + ay + bxy ; x/y + y/x)",
+"linquad_title": "Sisteme cu ecuații de gradul 1 și 2",
+"linquad_type1": "Sistemul 1",
+"linquad_type2": "Sistemul 2",
+"linquad_type3": "Sistemul 3",
+"lesson1": "Lecția 1"
+
+
+
+}

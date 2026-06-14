@@ -1,0 +1,35 @@
+{
+    "title": "System Generator",
+    "subtitle": "Choose a system type and enter the solutions.",
+    "darkMode": "Dark Mode",
+    "examMode": "Exam Mode",
+    "pdf": "PDF",
+    "generate": "Generate system",
+    "inputXY": "Enter the solutions x and y:",
+    "homogeneous": "Homogeneous",
+    "symmetric": "Symmetric",
+    "linearQuadratic": "Linear + Quadratic",
+    "advanced": "Advanced Symmetric",
+    "hom_title": "Homogeneous systems",
+"hom_type1": "1) Homogeneous system — type I",
+"hom_type2": "2) Homogeneous system — type II",
+"hom_type3": "3) Homogeneous system — type III",
+"fraction_hint": "You may also enter fractions in the form p/q. Recommended range: -20 … 20.", 
+"input_hint": "Enter the solutions x, y from the keyboard, either integers or fractions p/q from the set {-20, -19, ..., 19, 20}.",
+"sym_title": "Symmetric systems",
+"sym_type1": "Type 1 (ax + ay + bxy ; cx + cy - axy)",
+"sym_type2": "Type 2 (ax + ay - bxy ; x² + y² + bx + by)",
+"sym_type3": "Type 3 (ax + ay ; x³ + y³)",
+"sym_type4": "Type 4 (ax + ay + bxy ; x/y + y/x)",
+"linquad_title": "Systems with first and second degree equations",
+"linquad_type1": "System 1",
+"linquad_type2": "System 2",
+"linquad_type3": "System 3",
+
+"one_solution": "A solution",
+"lesson1": "Lecția 1"
+
+
+
+
+}

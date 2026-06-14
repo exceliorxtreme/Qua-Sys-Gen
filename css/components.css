@@ -1,0 +1,84 @@
+.module-wrapper {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* INPUTURI */
+.input-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-box {
+    width: 120px;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* BUTON GENERARE */
+.btn-generate {
+    margin-top: 25px;
+    padding: 12px 25px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #238636;
+    color: white;
+    box-shadow: 0 3px 0 #0f5323;
+}
+
+.btn-generate:hover {
+    background: #2ea043;
+}
+
+/* TASTATURA */
+.keyboard-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.keyboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    gap: 10px;
+}
+
+.key {
+    padding: 18px;
+    font-size: 22px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    background: #1f6feb;
+    color: #f2f6fc;
+    cursor: pointer;
+    box-shadow: 0 3px 0 #0d419d;
+}
+
+.key:hover {
+    background: #388bfd;
+}
+
+.key-special {
+    background: #f2cc60;
+    color: #24292f;
+    border-color: #9e6b00;
+    box-shadow: 0 3px 0 #9e6b00;
+}
+
+.dark .key {
+    background: #238636;
+    border-color: #1a7f37;
+    box-shadow: 0 3px 0 #0f5323;
+}
+
+.dark .key-special {
+    background: #f2cc60;
+    color: #111;
+}

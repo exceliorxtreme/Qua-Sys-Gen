@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title data-i18n="title">Generator Sisteme</title>
+    <link rel="stylesheet" href="css/layout.css">   
+    <link rel="stylesheet" href="css/components.css">
+    
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)'], ['$', '$']]
+  },
+  svg: {
+    scale: 1.4
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <header>
+        <h1 data-i18n="title">Generator Sisteme</h1>
+        <p class="subtitle" data-i18n="subtitle">Alege un tip de sistem și introdu soluțiile.</p>
+    </header>
+
+    <!-- SELECTOR LIMBĂ -->
+    <div class="lang-switch hidden-print">
+        <button class="btn-mode" onclick="changeLang('ro')">RO</button>
+        <button class="btn-mode" onclick="changeLang('en')">EN</button>
+    </div>
+
+    <!-- BUTOANE DE SUS -->
+    <div class="top-buttons hidden-print">
+        <button class="btn-mode" onclick="toggleDark()" data-i18n="darkMode">Mod întunecat</button>
+        <button class="btn-mode" onclick="window.print()" data-i18n="pdf">PDF</button>
+    </div>
+
+    <!-- TABURI -->
+    <nav class="hidden-print">
+        <button data-tab="lectia1" data-i18n="lesson1">Lecția 1</button>
+        <button data-tab="homogeneous" data-i18n="homogeneous">Omogene</button>
+        <button data-tab="symmetric" data-i18n="symmetric">Simetrice</button>
+        <button data-tab="linearQuadratic" data-i18n="linearQuadratic">Liniar + Pătratic</button>
+        <button data-tab="advanced" data-i18n="advanced">Simetric Avansat</button>
+    </nav>
+
+    <!-- CONȚINUT DINAMIC -->
+    <main id="content"></main>
+
+</div>
+
+<!-- MAIN SCRIPT -->
+<script type="module" src="main.js"></script>
+
+<!-- I18N LOADER -->
+<script type="module">
+    import { loadLang } from "./i18n/i18n.js";
+    window.changeLang = loadLang;
+    loadLang("ro");
+</script>
+
+<!-- DARK MODE + EXAM MODE -->
+<script>
+function toggleDark(){ document.body.classList.toggle("dark"); }
+let exam = false;
+function toggleExam(){ exam = !exam; alert(exam ? "Mod examen activat" : "Mod profesor activat"); }
+</script>
+
+</body>
+</html>
