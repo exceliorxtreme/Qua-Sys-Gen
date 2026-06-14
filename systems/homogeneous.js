@@ -1,5 +1,5 @@
 import { t } from "./i18n/i18n.js";
-import { make, add, mul, square, toStringR, normalize } from "../core/engine.js";
+import { make, add, mul, square, toStringR, normalize } from "./core/engine.js";
 
 let coefList = [];
 
