@@ -1,9 +1,9 @@
-import { t } from "./i18n/i18n.js";
-import { make, add, mul, square, toStringR, normalize } from "./core/engine.js";
+import { t } from "../i18n/i18n.js";
+import { make, add, mul, square, toStringR, normalize } from "../core/engine.js";
 
 let coefList = [];
 
-fetch(".data/coefficients.json")
+fetch("./data/coefficients.json")
     .then(r => r.json())
     .then(data => { coefList = data.coef; });
 
@@ -144,27 +144,27 @@ export function generateLinearQuadratic(X, Y) {
 
         <div class="card">
             <h3>${t("linquad_type1")}</h3>
-            <p>\\[
-             \\begin{aligned} ${eq1a} \\\\ ${eq1b} \\end{aligned} 
-            \\]
+            <p>\[
+             \begin{aligned} ${eq1a} \\\ ${eq1b} \end{aligned}
+            \]
 
 </p>
         </div>
 
         <div class="card">
             <h3>${t("linquad_type2")}</h3>
-            <p>\\[
-             \\begin{aligned} ${eq2a} \\\\ ${eq2b} \\end{aligned}
-              \\]
+            <p>\[
+             \begin{aligned} ${eq2a} \\\ ${eq2b} \end{aligned}
+              \]
 
 </p>
         </div>
 
         <div class="card">
             <h3>${t("linquad_type3")}</h3>
-            <p>\\[
-            \\begin{aligned} ${eq3a} \\\\ ${eq3b} \\end{aligned} 
-            \\]
+            <p>\[
+            \begin{aligned} ${eq3a} \\\ ${eq3b} \end{aligned}
+            \]
 
 </p>
         </div>

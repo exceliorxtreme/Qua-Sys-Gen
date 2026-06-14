@@ -1,5 +1,5 @@
-import { t } from "./i18n/i18n.js";
-import { make, add, mul, square, toStringR, normalize } from "./core/engine.js";
+import { t } from "../i18n/i18n.js";
+import { make, add, mul, square, toStringR, normalize } from "../core/engine.js";
 
 let coefList = [];
 
@@ -107,9 +107,9 @@ export function generateHomogeneous(X, Y) {
         <div class="card">
             <h3>${t("hom_type1")}</h3>
             <p>
-            \\[ 
-            \\begin{aligned} ${eq1a} \\\\ ${eq1b} \\end{aligned}
-             \\]
+            \[
+            \begin{aligned} ${eq1a} \\\ ${eq1b} \end{aligned}
+             \]
 
 </p>
         </div>
@@ -117,9 +117,9 @@ export function generateHomogeneous(X, Y) {
         <div class="card">
             <h3>${t("hom_type2")}</h3>
             <p>
-            \\[ 
-            \\begin{aligned} ${eq2a} \\\\ ${eq2b} \\end{aligned} 
-            \\]
+            \[
+            \begin{aligned} ${eq2a} \\\ ${eq2b} \end{aligned}
+            \]
 
 </p>
         </div>
@@ -127,9 +127,9 @@ export function generateHomogeneous(X, Y) {
         <div class="card">
             <h3>${t("hom_type3")}</h3>
             <p>
-            \\[
-             \\begin{aligned} ${eq3a} \\\\ ${eq3b} \\end{aligned} 
-             \\]
+            \[
+             \begin{aligned} ${eq3a} \\\ ${eq3b} \end{aligned}
+             \]
 
 </p>
         </div>

@@ -1,6 +1,6 @@
 // systems/symmetric.js
-import { t } from "./i18n/i18n.js";
-import { make, add, mul, square, toStringR, normalize } from "./core/engine.js";
+import { t } from "../i18n/i18n.js";
+import { make, add, mul, square, toStringR, normalize } from "../core/engine.js";
 
 let coefList = [];
 
@@ -153,7 +153,7 @@ export function generateSymmetric(X, Y) {
             <h3>${t("sym_type1")}</h3>
             <p>
 
-\\[ \\begin{aligned} ${eq1a} \\\\ ${eq1b} \\end{aligned} \\]
+\[ \begin{aligned} ${eq1a} \\\ ${eq1b} \end{aligned} \]
 
 </p>
         </div>
@@ -162,7 +162,7 @@ export function generateSymmetric(X, Y) {
             <h3>${t("sym_type2")}</h3>
             <p>
 
-\\[ \\begin{aligned} ${eq2a} \\\\ ${eq2b} \\end{aligned} \\]
+\[ \begin{aligned} ${eq2a} \\\ ${eq2b} \end{aligned} \]
 
 </p>
         </div>
@@ -171,7 +171,7 @@ export function generateSymmetric(X, Y) {
             <h3>${t("sym_type3")}</h3>
             <p>
 
-\\[ \\begin{aligned} ${eq3a} \\\\ ${eq3b} \\end{aligned} \\]
+\[ \begin{aligned} ${eq3a} \\\ ${eq3b} \end{aligned} \]
 
 </p>
         </div>
@@ -180,7 +180,7 @@ export function generateSymmetric(X, Y) {
             <h3>${t("sym_type4")}</h3>
             <p>
 
-\\[ \\begin{aligned} ${eq4a} \\\\ ${eq4b} \\end{aligned} \\]
+\[ \begin{aligned} ${eq4a} \\\ ${eq4b} \end{aligned} \]
 
 </p>
         </div>
