@@ -123,5 +123,5 @@ MIT License — liber pentru uz educațional.
 
 ## 👤 Autor
 
-Proiect realizat de **car**, profesor de matematică.  
+Proiect realizat de **___**, profesor de matematică.  
 Asistență tehnică: Microsoft Copilot.
