@@ -1,9 +1,9 @@
-import { t } from "../i18n/i18n.js";
+import { t } from "./i18n/i18n.js";
 import { make, add, mul, square, toStringR, normalize } from "../core/engine.js";
 
 let coefList = [];
 
-fetch("../data/coefficients.json")
+fetch("./data/coefficients.json")
     .then(r => r.json())
     .then(data => { coefList = data.coef; });
 
