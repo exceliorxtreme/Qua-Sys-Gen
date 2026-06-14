@@ -62,7 +62,7 @@ Proiectul generează automat sisteme omogene, simetrice și liniare‑pătratice
 
 1. Clonează repository‑ul:
 
-git clone <https://github.com/USERNAME/qua-sys-gen.git>
+git clone <[https://github.com/exceliorxtreme/Qua-Sys-Gen]>
 
 1. Intră în folder:
 
