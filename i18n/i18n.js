@@ -16,6 +16,6 @@ export function t(key){
 export function applyTranslations(){
     document.querySelectorAll("[data-i18n]").forEach(el=>{
         const key = el.getAttribute("data-i18n");
-        el.innerHTML = t(key);
+        el.textContent = t(key);
     });
 }
