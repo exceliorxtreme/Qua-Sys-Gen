@@ -27,7 +27,12 @@
 "linquad_type3": "System 3",
 
 "one_solution": "A solution",
-"lesson1": "Lecția 1"
+"lesson1": "Lesson 1",
+"adv_title": "Advanced symmetric systems",
+"adv_type1": "Type 1 (a·x³ + a·y³ ; b·x²y + b·xy²)",
+"adv_type2": "Type 2 (a·|x| + a·|y| ; 1/x + 1/y)",
+"adv_type3": "Type 3 (a·x² + a·y² ; b·x³ + b·y³)"
+
 
 
 

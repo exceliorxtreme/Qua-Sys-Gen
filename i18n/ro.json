@@ -26,7 +26,12 @@
 "linquad_type1": "Sistemul 1",
 "linquad_type2": "Sistemul 2",
 "linquad_type3": "Sistemul 3",
-"lesson1": "Lecția 1"
+"lesson1": "Lecția 1",
+"adv_title": "Sisteme simetrice avansate",
+"adv_type1": "Tip 1 (a·x³ + a·y³ ; b·x²y + b·xy²)",
+"adv_type2": "Tip 2 (a·|x| + a·|y| ; 1/x + 1/y)",
+"adv_type3": "Tip 3 (a·x² + a·y² ; b·x³ + b·y³)"
+
 
 
 

@@ -4,6 +4,7 @@ import { generateSymmetric } from "../systems/symmetric.js";
 import { generateLinearQuadratic } from "../systems/linearQuadratic.js";
 import { parseFraction } from "../core/fractions.js";
 import { exportLatex } from "../systems/homogeneous.js";
+import { generateSymmetricAdvanced } from "../systems/symmetricAdvanced.js";
 
 export function loadMainModule(mode = "homogeneous"){
     return `
@@ -42,6 +43,9 @@ window.generateSystem = function(mode){
 
     if(mode === "linearQuadratic"){
         result = generateLinearQuadratic(X, Y);
+    }
+    if(mode === "advanced"){
+        result = generateSymmetricAdvanced(X, Y);
     }
 
     document.getElementById("result").innerHTML = result.html;

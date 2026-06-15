@@ -50,8 +50,8 @@ function loadTab(tab){
             return; // IMPORTANT
 
         case "advanced":
-            html = "<h2>Simetric Avansat — în curând</h2>";
-            break;
+    html = loadMainModule("advanced");
+    break;
 
         default:
             html = "<h2>Tab necunoscut</h2>";
