@@ -127,7 +127,15 @@ Poate fi compilat cu:
 - Modul „Exerciții pentru elevi”
 
 ---
+## 🥚 Easter Egg
 
+Interfața nu afișează soluțiile sistemelor (pentru a păstra exercițiile curate),
+dar cei curioși le pot găsi în exportul LaTeX, ascunse ca și comentariu:
+
+% Soluție: (x, y)
+
+Dacă ai descoperit asta, felicitări — ai găsit Easter Egg-ul proiectului.
+---
 ## 📜 Licență
 
 MIT License — liber pentru uz educațional.
