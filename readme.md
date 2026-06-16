@@ -22,7 +22,7 @@ Proiectul generează automat sisteme omogene, simetrice și liniare‑pătratice
 - **Validări inteligente** (ex: `x, y ≠ 0` pentru fracții)
 - **Suport RO/EN** (i18n complet)
 ---
-
+```
 qua-sys-gen/
 │
 ├── css/
@@ -58,7 +58,7 @@ qua-sys-gen/
 │
 ├── index.html
 └── README.md
-
+```
 
 ## 🛠 Tehnologii folosite
 
