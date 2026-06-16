@@ -134,7 +134,7 @@ Poate fi compilat cu:
 Interfața nu afișează soluțiile sistemelor (pentru a păstra exercițiile curate),
 dar cei curioși le pot găsi în exportul LaTeX, ascunse ca și comentariu:
 
-% Soluție: (x, y)
+% Soluție: (x, y)----arată doar soluția generatoare, NU toate soluțiile!
 
 Dacă ai descoperit asta, felicitări — ai găsit Easter Egg-ul proiectului.
 ---
