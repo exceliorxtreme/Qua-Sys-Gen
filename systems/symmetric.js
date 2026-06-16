@@ -23,11 +23,10 @@ function term(coef, text) {
 
 export function generateSymmetric(X, Y) {
 
-    const sol = `(${toStringR(X)}, ${toStringR(Y)})`;
+    // Soluția pentru LaTeX (comentată)
+    const solStr = `(${toStringR(X)}, ${toStringR(Y)})`;
 
-    // ---------------------------
     // TIP 1
-    // ---------------------------
     const a1 = pickCoef();
     const b1 = pickCoef();
     const c1 = pickCoef();
@@ -58,9 +57,7 @@ export function generateSymmetric(X, Y) {
         term(-a1, "xy") +
         ` &= ${toStringR(D1_2)}`;
 
-    // ---------------------------
     // TIP 2
-    // ---------------------------
     const a2 = pickCoef();
     const b2 = pickCoef();
 
@@ -90,9 +87,7 @@ export function generateSymmetric(X, Y) {
         term(b2, "y") +
         ` &= ${toStringR(D2_2)}`;
 
-    // ---------------------------
     // TIP 3
-    // ---------------------------
     const a3 = pickCoef();
 
     const D3_1 = normalize(
@@ -114,9 +109,7 @@ export function generateSymmetric(X, Y) {
     const eq3b =
         `x^3 + y^3 &= ${toStringR(D3_2)}`;
 
-    // ---------------------------
     // TIP 4
-    // ---------------------------
     const a4 = pickCoef();
     const b4 = pickCoef();
 
@@ -143,54 +136,42 @@ export function generateSymmetric(X, Y) {
     const eq4b =
         `\\frac{x}{y} + \\frac{y}{x} &= ${toStringR(D4_2)}`;
 
-    // ---------------------------
-    // HTML pentru afișare
-    // ---------------------------
+    // HTML pentru afișare (FĂRĂ soluție)
     const html = `
         <h2>${t("sym_title")}</h2>
 
         <div class="card">
             <h3>${t("sym_type1")}</h3>
             <p>
-
 \\( \\begin{aligned} ${eq1a} \\\\ ${eq1b} \\end{aligned} \\)
-
-</p>
+            </p>
         </div>
 
         <div class="card">
             <h3>${t("sym_type2")}</h3>
             <p>
-
 \\( \\begin{aligned} ${eq2a} \\\\ ${eq2b} \\end{aligned} \\)
-
-</p>
+            </p>
         </div>
 
         <div class="card">
             <h3>${t("sym_type3")}</h3>
             <p>
-
 \\( \\begin{aligned} ${eq3a} \\\\ ${eq3b} \\end{aligned} \\)
-
-</p>
+            </p>
         </div>
 
         <div class="card">
             <h3>${t("sym_type4")}</h3>
             <p>
-
 \\( \\begin{aligned} ${eq4a} \\\\ ${eq4b} \\end{aligned} \\)
-
-</p>
+            </p>
         </div>
 
         <button id="exportLatexBtn" class="btn-mode">Export LaTeX</button>
     `;
 
-    // ---------------------------
-    // LATEX pentru export (enumerate)
-    // ---------------------------
+    // LATEX pentru export (cu soluție comentată)
     const latex = `
 \\section*{${t("sym_title")}}
 
@@ -203,8 +184,7 @@ ${eq1a} \\\\
 ${eq1b}
 \\end{aligned}
 \\]
-
-
+% Soluție: ${solStr}
 
 \\item
 \\[
@@ -213,8 +193,7 @@ ${eq2a} \\\\
 ${eq2b}
 \\end{aligned}
 \\]
-
-
+% Soluție: ${solStr}
 
 \\item
 \\[
@@ -223,8 +202,7 @@ ${eq3a} \\\\
 ${eq3b}
 \\end{aligned}
 \\]
-
-
+% Soluție: ${solStr}
 
 \\item
 \\[
@@ -233,8 +211,7 @@ ${eq4a} \\\\
 ${eq4b}
 \\end{aligned}
 \\]
-
-
+% Soluție: ${solStr}
 
 \\end{enumerate}
 `;

@@ -53,6 +53,10 @@ function loadTab(tab){
     html = loadMainModule("advanced");
     break;
 
+    case "linear2x2":
+    html = loadMainModule("linear2x2");
+    break;
+    
         default:
             html = "<h2>Tab necunoscut</h2>";
             break;

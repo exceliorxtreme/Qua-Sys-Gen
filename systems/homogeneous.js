@@ -22,7 +22,8 @@ function pickCoef() {
 
 export function generateHomogeneous(X, Y) {
 
-    const sol = "(" + toStringR(X) + ", " + toStringR(Y) + ")";
+    // Soluția pentru LaTeX (comentată)
+    const solStr = `(${toStringR(X)}, ${toStringR(Y)})`;
 
     // TIP 1
     const a1 = make(pickCoef(), 1);
@@ -100,7 +101,7 @@ export function generateHomogeneous(X, Y) {
     const eq3a = "x^2" + term(a3.num, "xy") + term(c3.num, "y^2") + " &= " + toStringR(D3_1);
     const eq3b = "x^2" + term(-b3.num, "xy") + term(1, "y^2") + " &= " + toStringR(D3_2);
 
-    // HTML pentru afișare
+    // HTML pentru afișare (FĂRĂ soluție)
     const html = `
         <h2>${t("hom_title")}</h2>
 
@@ -110,8 +111,7 @@ export function generateHomogeneous(X, Y) {
             \\(
             \\begin{aligned} ${eq1a} \\\\ ${eq1b} \\end{aligned}
             \\)
-
-</p>
+            </p>
         </div>
 
         <div class="card">
@@ -120,8 +120,7 @@ export function generateHomogeneous(X, Y) {
             \\(
             \\begin{aligned} ${eq2a} \\\\ ${eq2b} \\end{aligned}
             \\)
-
-</p>
+            </p>
         </div>
 
         <div class="card">
@@ -130,17 +129,15 @@ export function generateHomogeneous(X, Y) {
             \\(
              \\begin{aligned} ${eq3a} \\\\ ${eq3b} \\end{aligned}
              \\)
-
-</p>
+            </p>
         </div>
 
         <button id="exportLatexBtn" class="btn-mode">Export LaTeX</button>
     `;
 
-    // LATEX pentru export
-   const latex = `
+    // LATEX pentru export (cu soluție comentată)
+    const latex = `
 \\section*{${t("hom_title")}}
-
 
 \\begin{enumerate}
 
@@ -151,8 +148,7 @@ ${eq1a} \\\\
 ${eq1b}
 \\end{aligned}
 \\]
-
-
+% Soluție: ${solStr}
 
 \\item
 \\[
@@ -161,8 +157,7 @@ ${eq2a} \\\\
 ${eq2b}
 \\end{aligned}
 \\]
-
-
+% Soluție: ${solStr}
 
 \\item
 \\[
@@ -171,12 +166,10 @@ ${eq3a} \\\\
 ${eq3b}
 \\end{aligned}
 \\]
-
-
+% Soluție: ${solStr}
 
 \\end{enumerate}
 `;
-
 
     return { html, latex };
 }

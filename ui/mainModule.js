@@ -5,6 +5,7 @@ import { generateLinearQuadratic } from "../systems/linearQuadratic.js";
 import { parseFraction } from "../core/fractions.js";
 import { exportLatex } from "../systems/homogeneous.js";
 import { generateSymmetricAdvanced } from "../systems/symmetricAdvanced.js";
+import { generateLinear2x2 } from "../systems/linear2x2.js";
 
 export function loadMainModule(mode = "homogeneous"){
     return `
@@ -48,6 +49,9 @@ window.generateSystem = function(mode){
         result = generateSymmetricAdvanced(X, Y);
     }
 
+    if(mode === "linear2x2"){
+    result = generateLinear2x2(X, Y);
+}
     document.getElementById("result").innerHTML = result.html;
 
     window._lastLatex = result.latex;

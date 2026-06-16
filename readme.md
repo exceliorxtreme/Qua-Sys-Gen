@@ -1,60 +1,73 @@
 # Qua‑Sys‑Gen  
 
-## Generator educațional de sisteme de ecuații (Omogene • Simetrice • Liniar + Pătratic)
+## Generator educațional de sisteme de ecuații (Omogene • Simetrice • Liniar + Pătratic • Liniare 2×2)
 
-Qua‑Sys‑Gen este o aplicație web interactivă pentru profesori și elevi, dedicată studiului sistemelor de ecuații de gradul II.  
+Qua‑Sys‑Gen este o aplicație web interactivă pentru profesori și elevi, dedicată studiului sistemelor de ecuații de gradul II.
 Proiectul generează automat sisteme omogene, simetrice și liniare‑pătratice, oferă soluția exactă și permite exportul în format **LaTeX** pentru teste, fișe și materiale didactice.
 
 ---
 
 ## ✨ Funcționalități principale
 
-- Generare automată de sisteme:
-  - Omogene  
-  - Simetrice  
-  - Liniar + Pătratic  
-- Soluție exactă (fracții)  
-- Export LaTeX profesional (`enumerate`)  
-- Interfață pentru profesori  
-- Lecții integrate  
-- Mod Avansat (în dezvoltare)  
-- Suport RO/EN
-
+- **Generare automată de sisteme:**
+  - Omogene
+  - Simetrice (4 tipuri)
+  - Liniar + Pătratic
+  - Simetric Avansat (3 tipuri: puteri, module, cuadratic-cubic)
+  - **Sisteme Liniare 2×2** (5 tipuri: simple, coeficienți variați, coeficienți legați, module simple, module compuse)
+- **Soluție exactă** (fracții raționale)
+- **Export LaTeX profesional** (`enumerate` cu soluție comentată)
+- **Interfață pentru profesori** cu input controlat
+- **Lecții integrate** (Lecția 1)
+- **Validări inteligente** (ex: `x, y ≠ 0` pentru fracții)
+- **Suport RO/EN** (i18n complet)
 ---
 
-## 📁 Structura proiectului
-
-/
-├── css/  
-│   ├── style.css  
-│   └── dark.css  
-│  
-├── data/  
-│   └── coefficients.json  
-│  
-├── js/  
-│   ├── main.js  
-│   ├── core/engine.js  
-│   ├── ui/mainModule.js  
-│   └── systems/  
-│       ├── homogeneous.js  
-│       ├── symmetric.js  
-│       └── linearQuadratic.js  
-│  
-├── lectii/  
-│   └── lectia1.html  
-│  
-├── index.html  
+qua-sys-gen/
+│
+├── css/
+│   ├── layout.css
+│   └── components.css
+│
+├── data/
+│   └── coefficients.json
+│
+├── core/
+│   ├── engine.js
+│   ├── fractions.js
+│   ├── random.js
+│   └── utils.js
+│
+├── ui/
+│   └── mainModule.js
+│
+├── systems/
+│   ├── homogeneous.js
+│   ├── symmetric.js
+│   ├── linearQuadratic.js
+│   ├── symmetricAdvanced.js
+│   └── linear2x2.js
+│
+├── i18n/
+│   ├── i18n.js
+│   ├── ro.json
+│   └── en.json
+│
+├── lectii/
+│   └── lectia1.html
+│
+├── index.html
 └── README.md
+
 
 ## 🛠 Tehnologii folosite
 
-- HTML5  
-- CSS3 (light/dark)  
-- JavaScript ES6  
-- MathJax  
-- LaTeX  
-- JSON  
+- HTML5
+- CSS3 (light/dark)
+- JavaScript ES6
+- MathJax
+- LaTeX
+- JSON
 
 ---
 
@@ -88,29 +101,29 @@ Fiecare modul generează automat:
 
 Poate fi compilat cu:
 
-- TeXLive  
-- MiKTeX  
-- Overleaf  
+- TeXLive
+- MiKTeX
+- Overleaf
 
 ## 🧑‍🏫 Pentru profesori
 
-- Coeficienți mici (±1…±9)  
-- Soluții exacte  
+- Coeficienți mici (±1…±9)
+- Soluții exacte
 - Export LaTeX pentru:
-  - teste  
-  - fișe  
-  - lucrări  
-  - materiale didactice  
+- teste
+- fișe
+- lucrări
+- materiale didactice
 
 ---
 
 ## 🚧 Roadmap
 
-- Lecția 2  
-- Modul Avansat complet  
-- Export PDF  
-- Salvare localStorage  
-- Fișe complete (10+ sisteme)  
+- Lecția 2
+- Modul Avansat complet
+- Export PDF
+- Salvare localStorage
+- Fișe complete (10+ sisteme)
 - Modul „Exerciții pentru elevi”
 
 ---
@@ -123,5 +136,5 @@ MIT License — liber pentru uz educațional.
 
 ## 👤 Autor
 
-Proiect realizat de **___**, profesor de matematică.  
-Asistență tehnică: Microsoft Copilot.
+Proiect realizat de **___**, profesor de matematică.
+Asistență tehnică: Microsoft Copilot & Minimax M3

@@ -28,12 +28,10 @@ function lead(coef, text){
 
 export function generateLinearQuadratic(X, Y) {
 
-    const sol = "(" + toStringR(X) + ", " + toStringR(Y) + ")";
+    // Soluția pentru LaTeX (comentată)
+    const solStr = `(${toStringR(X)}, ${toStringR(Y)})`;
 
-    // ============================
     // SISTEM 1
-    // ============================
-
     const a1 = pickCoef();
     const b1 = pickCoef();
     const c1 = pickCoef();
@@ -65,10 +63,7 @@ export function generateLinearQuadratic(X, Y) {
         term(1, "x") +
         " &= " + toStringR(D1_2);
 
-    // ============================
     // SISTEM 2
-    // ============================
-
     const a2 = pickCoef();
     const b2 = pickCoef();
     const c2 = pickCoef();
@@ -100,10 +95,7 @@ export function generateLinearQuadratic(X, Y) {
         term(-d3, "xy") +
         " &= " + toStringR(D2_2);
 
-    // ============================
     // SISTEM 3
-    // ============================
-
     const a3 = pickCoef();
     const b3 = pickCoef();
     const c3 = pickCoef();
@@ -135,47 +127,35 @@ export function generateLinearQuadratic(X, Y) {
         term(-3*d5, "y") +
         " &= " + toStringR(D3_2);
 
-    // ============================
-    // HTML pentru afișare
-    // ============================
-
+    // HTML pentru afișare (FĂRĂ soluție)
     const html = `
         <h2>${t("linquad_title")}</h2>
 
         <div class="card">
             <h3>${t("linquad_type1")}</h3>
-            <p>\\(
-             \\begin{aligned} ${eq1a} \\\\ ${eq1b} \\end{aligned}
-            \\)
-
-</p>
+            <p>
+\\( \\begin{aligned} ${eq1a} \\\\ ${eq1b} \\end{aligned} \\)
+            </p>
         </div>
 
         <div class="card">
             <h3>${t("linquad_type2")}</h3>
-            <p>\\(
-             \\begin{aligned} ${eq2a} \\\\ ${eq2b} \\end{aligned}
-              \\)
-
-</p>
+            <p>
+\\( \\begin{aligned} ${eq2a} \\\\ ${eq2b} \\end{aligned} \\)
+            </p>
         </div>
 
         <div class="card">
             <h3>${t("linquad_type3")}</h3>
-            <p>\\(
-            \\begin{aligned} ${eq3a} \\\\ ${eq3b} \\end{aligned}
-            \\)
-
-</p>
+            <p>
+\\( \\begin{aligned} ${eq3a} \\\\ ${eq3b} \\end{aligned} \\)
+            </p>
         </div>
 
         <button id="exportLatexBtn" class="btn-mode">Export LaTeX</button>
     `;
 
-    // ============================
-    // LATEX pentru export (enumerate)
-    // ============================
-
+    // LATEX pentru export (cu soluție comentată)
     const latex = `
 \\section*{${t("linquad_title")}}
 
@@ -188,8 +168,7 @@ ${eq1a} \\\\
 ${eq1b}
 \\end{aligned}
 \\]
-
-
+% Soluție: ${solStr}
 
 \\item
 \\[
@@ -198,8 +177,7 @@ ${eq2a} \\\\
 ${eq2b}
 \\end{aligned}
 \\]
-
-
+% Soluție: ${solStr}
 
 \\item
 \\[
@@ -208,8 +186,7 @@ ${eq3a} \\\\
 ${eq3b}
 \\end{aligned}
 \\]
-
-
+% Soluție: ${solStr}
 
 \\end{enumerate}
 `;
