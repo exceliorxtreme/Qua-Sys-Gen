@@ -107,7 +107,7 @@ Poate fi compilat cu:
 - MiKTeX
 - Overleaf
 
-## 🧑‍🏫 Pentru profesori
+##  Pentru profesori
 
 - Coeficienți mici (±1…±9)
 - Soluții exacte
