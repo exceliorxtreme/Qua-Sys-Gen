@@ -107,11 +107,17 @@ export function generateLinearSystems(X, Y, Z){
     const eq3c = fmtLead(a3p-a3,"x") + fmtTerm(b3p-b3,"y") + fmtTerm(c3p-c3,"z") + " &= " + toStringR(D3_3);
 
     // ============================================================
-    // SISTEM 4 — Module simple
+    // SISTEM 4 — Module simple (PATCH FRACTII)
     // ============================================================
-    const absXY = make(Math.abs(X.num - Y.num), 1);
-    const absYZ = make(Math.abs(Y.num - Z.num), 1);
-    const absXZ = make(Math.abs(X.num - Z.num), 1);
+
+    const dXY = normalize(sub(X, Y));
+    const absXY = make(Math.abs(dXY.num), dXY.den);
+
+    const dYZ = normalize(sub(Y, Z));
+    const absYZ = make(Math.abs(dYZ.num), dYZ.den);
+
+    const dXZ = normalize(sub(X, Z));
+    const absXZ = make(Math.abs(dXZ.num), dXZ.den);
 
     const p4 = pickCoef(), q4 = pickCoef(), r4 = pickCoef();
     const s4 = pickCoef(), t4 = pickCoef(), u4 = pickCoef();
@@ -126,11 +132,17 @@ export function generateLinearSystems(X, Y, Z){
     const eq4c = fmtLead(v4,"|x-z|") + fmtTerm(w4,"|x-y|") + fmtTerm(z4,"|y-z|") + " &= " + toStringR(D4_3);
 
     // ============================================================
-    // SISTEM 5 — Module „răutăcioase”
+    // SISTEM 5 — Module „răutăcioase” (PATCH FRACTII)
     // ============================================================
-    const abs1 = make(Math.abs(2*X.num - Y.num + Z.num), 1);
-    const abs2 = make(Math.abs(X.num + 3*Y.num - Z.num), 1);
-    const abs3 = make(Math.abs(X.num - 2*Y.num + 4*Z.num), 1);
+
+    const e1 = normalize(add(add(mul(make(2,1), X), mul(make(-1,1), Y)), Z));
+    const abs1 = make(Math.abs(e1.num), e1.den);
+
+    const e2 = normalize(add(add(X, mul(make(3,1), Y)), mul(make(-1,1), Z)));
+    const abs2 = make(Math.abs(e2.num), e2.den);
+
+    const e3 = normalize(add(add(X, mul(make(-2,1), Y)), mul(make(4,1), Z)));
+    const abs3 = make(Math.abs(e3.num), e3.den);
 
     const p5 = pickCoef(), q5 = pickCoef(), r5 = pickCoef();
     const s5 = pickCoef(), t5 = pickCoef(), u5 = pickCoef();
@@ -143,7 +155,6 @@ export function generateLinearSystems(X, Y, Z){
     const eq5a = fmtLead(p5,"|2x-y+z|") + fmtTerm(q5,"|x+3y-z|") + fmtTerm(r5,"|x-2y+4z|") + " &= " + toStringR(D5_1);
     const eq5b = fmtLead(s5,"|x+3y-z|") + fmtTerm(t5,"|x-2y+4z|") + fmtTerm(u5,"|2x-y+z|") + " &= " + toStringR(D5_2);
     const eq5c = fmtLead(v5,"|x-2y+4z|") + fmtTerm(w5,"|2x-y+z|") + fmtTerm(z5,"|x+3y-z|") + " &= " + toStringR(D5_3);
-
     // ============================================================
     // HTML
     // ============================================================
