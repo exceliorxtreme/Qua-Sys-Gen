@@ -104,7 +104,6 @@ export function generateLinear2x2(X, Y) {
     const eq3a = fmtLead(a3, "x") + fmtTerm(b3, "y") + " &= " + toStringR(D3_1);
     const eq3b = fmtLead(a3p, "x") + fmtTerm(b3p, "y") + " &= " + toStringR(D3_2);
 
-   / ==========================================
 // SISTEM 4: Module simple (fracții corecte)
 // ==========================================
 const a4 = pickCoef();
