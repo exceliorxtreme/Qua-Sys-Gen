@@ -187,9 +187,7 @@ export function generateLinearSystems(X, Y, Z){
 \\begin{enumerate}
 
 \\item
-\
-
-\[
+\\[
 \\begin{aligned}
 ${eq1a} \\\\
 ${eq1b} \\\\
@@ -201,9 +199,7 @@ ${eq1c}
 % Soluție: ${solStr}
 
 \\item
-\
-
-\[
+\\[
 \\begin{aligned}
 ${eq2a} \\\\
 ${eq2b} \\\\
@@ -215,9 +211,7 @@ ${eq2c}
 % Soluție: ${solStr}
 
 \\item
-\
-
-\[
+\\[
 \\begin{aligned}
 ${eq3a} \\\\
 ${eq3b} \\\\
@@ -229,9 +223,7 @@ ${eq3c}
 % Soluție: ${solStr}
 
 \\item
-\
-
-\[
+\\[
 \\begin{aligned}
 ${eq4a} \\\\
 ${eq4b} \\\\
@@ -243,9 +235,7 @@ ${eq4c}
 % Soluție: ${solStr}
 
 \\item
-\
-
-\[
+\\[
 \\begin{aligned}
 ${eq5a} \\\\
 ${eq5b} \\\\
