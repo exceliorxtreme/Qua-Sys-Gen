@@ -1,6 +1,6 @@
 // systems/linearSystems.js
 import { t } from "../i18n/i18n.js";
-import { make, add, mul, toStringR, normalize } from "../core/engine.js";
+import { make, add, sub, mul, toStringR, normalize } from "../core/engine.js";
 
 let coefList = [];
 
@@ -132,29 +132,78 @@ export function generateLinearSystems(X, Y, Z){
     const eq4c = fmtLead(v4,"|x-z|") + fmtTerm(w4,"|x-y|") + fmtTerm(z4,"|y-z|") + " &= " + toStringR(D4_3);
 
     // ============================================================
-    // SISTEM 5 — Module „răutăcioase” (PATCH FRACTII)
-    // ============================================================
+// SISTEM 5 — Module „răutăcioase” (PATCH FRACTII)
+// ============================================================
 
-    const e1 = normalize(add(add(mul(make(2,1), X), mul(make(-1,1), Y)), Z));
-    const abs1 = make(Math.abs(e1.num), e1.den);
+// |2x - y + z|
+const e1 = normalize(
+    add(
+        add(mul(make(2,1), X), mul(make(-1,1), Y)),
+        Z
+    )
+);
+const abs1 = make(Math.abs(e1.num), e1.den);
 
-    const e2 = normalize(add(add(X, mul(make(3,1), Y)), mul(make(-1,1), Z)));
-    const abs2 = make(Math.abs(e2.num), e2.den);
+// |x + 3y - z|
+const e2 = normalize(
+    add(
+        add(X, mul(make(3,1), Y)),
+        mul(make(-1,1), Z)
+    )
+);
+const abs2 = make(Math.abs(e2.num), e2.den);
 
-    const e3 = normalize(add(add(X, mul(make(-2,1), Y)), mul(make(4,1), Z)));
-    const abs3 = make(Math.abs(e3.num), e3.den);
+// |x - 2y + 4z|
+const e3 = normalize(
+    add(
+        add(X, mul(make(-2,1), Y)),
+        mul(make(4,1), Z)
+    )
+);
+const abs3 = make(Math.abs(e3.num), e3.den);
 
-    const p5 = pickCoef(), q5 = pickCoef(), r5 = pickCoef();
-    const s5 = pickCoef(), t5 = pickCoef(), u5 = pickCoef();
-    const v5 = pickCoef(), w5 = pickCoef(), z5 = pickCoef();
+const p5 = pickCoef(), q5 = pickCoef(), r5 = pickCoef();
+const s5 = pickCoef(), t5 = pickCoef(), u5 = pickCoef();
+const v5 = pickCoef(), w5 = pickCoef(), z5 = pickCoef();
 
-    const D5_1 = normalize(add(add(mul(make(p5,1), abs1), mul(make(q5,1), abs2)), mul(make(r5,1), abs3)));
-    const D5_2 = normalize(add(add(mul(make(s5,1), abs2), mul(make(t5,1), abs3)), mul(make(u5,1), abs1)));
-    const D5_3 = normalize(add(add(mul(make(v5,1), abs3), mul(make(w5,1), abs1)), mul(make(z5,1), abs2)));
+const D5_1 = normalize(
+    add(
+        add(mul(make(p5,1), abs1), mul(make(q5,1), abs2)),
+        mul(make(r5,1), abs3)
+    )
+);
 
-    const eq5a = fmtLead(p5,"|2x-y+z|") + fmtTerm(q5,"|x+3y-z|") + fmtTerm(r5,"|x-2y+4z|") + " &= " + toStringR(D5_1);
-    const eq5b = fmtLead(s5,"|x+3y-z|") + fmtTerm(t5,"|x-2y+4z|") + fmtTerm(u5,"|2x-y+z|") + " &= " + toStringR(D5_2);
-    const eq5c = fmtLead(v5,"|x-2y+4z|") + fmtTerm(w5,"|2x-y+z|") + fmtTerm(z5,"|x+3y-z|") + " &= " + toStringR(D5_3);
+const D5_2 = normalize(
+    add(
+        add(mul(make(s5,1), abs2), mul(make(t5,1), abs3)),
+        mul(make(u5,1), abs1)
+    )
+);
+
+const D5_3 = normalize(
+    add(
+        add(mul(make(v5,1), abs3), mul(make(w5,1), abs1)),
+        mul(make(z5,1), abs2)
+    )
+);
+
+const eq5a =
+    fmtLead(p5,"|2x-y+z|") +
+    fmtTerm(q5,"|x+3y-z|") +
+    fmtTerm(r5,"|x-2y+4z|") +
+    " &= " + toStringR(D5_1);
+
+const eq5b =
+    fmtLead(s5,"|x+3y-z|") +
+    fmtTerm(t5,"|x-2y+4z|") +
+    fmtTerm(u5,"|2x-y+z|") +
+    " &= " + toStringR(D5_2);
+
+const eq5c =
+    fmtLead(v5,"|x-2y+4z|") +
+    fmtTerm(w5,"|2x-y+z|") +
+    fmtTerm(z5,"|x+3y-z|") +
+    " &= " + toStringR(D5_3);
     // ============================================================
     // HTML
     // ============================================================
