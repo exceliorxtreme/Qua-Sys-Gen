@@ -124,7 +124,7 @@ const D4_2 = normalize(add(mul(make(c4, 1), absXpY), mul(make(d4, 1), absXmY)));
 
 const eq4a = fmtLead(a4, "|x-y|") + fmtTerm(b4, "|x+y|") + " &= " + toStringR(D4_1);
 const eq4b = fmtLead(c4, "|x+y|") + fmtTerm(d4, "|x-y|") + " &= " + toStringR(D4_2);
-    /// ==========================================
+   
 // SISTEM 5: Module "răutăcioase" (fracții corecte)
 // ==========================================
 const a5 = pickCoef();
