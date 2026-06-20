@@ -1,6 +1,6 @@
 // systems/linear2x2.js
 import { t } from "../i18n/i18n.js";
-import { make, add, mul, toStringR, normalize } from "../core/engine.js";
+import { make, add, sub, mul, toStringR, normalize } from "../core/engine.js";
 
 let coefList = [];
 
@@ -104,40 +104,48 @@ export function generateLinear2x2(X, Y) {
     const eq3a = fmtLead(a3, "x") + fmtTerm(b3, "y") + " &= " + toStringR(D3_1);
     const eq3b = fmtLead(a3p, "x") + fmtTerm(b3p, "y") + " &= " + toStringR(D3_2);
 
-    // ==========================================
-    // SISTEM 4: Module simple
-    // ==========================================
-    const a4 = pickCoef();
-    const b4 = pickCoef();
-    const c4 = pickCoef();
-    const d4 = pickCoef();
+   / ==========================================
+// SISTEM 4: Module simple (fracții corecte)
+// ==========================================
+const a4 = pickCoef();
+const b4 = pickCoef();
+const c4 = pickCoef();
+const d4 = pickCoef();
 
-    const absXmY = make(Math.abs(X.num - Y.num), 1);
-    const absXpY = make(Math.abs(X.num + Y.num), 1);
+// |x - y|
+const dXY = normalize(sub(X, Y));
+const absXmY = make(Math.abs(dXY.num), dXY.den);
 
-    const D4_1 = normalize(add(mul(make(a4, 1), absXmY), mul(make(b4, 1), absXpY)));
-    const D4_2 = normalize(add(mul(make(c4, 1), absXpY), mul(make(d4, 1), absXmY)));
+// |x + y|
+const sXY = normalize(add(X, Y));
+const absXpY = make(Math.abs(sXY.num), sXY.den);
 
-    const eq4a = fmtLead(a4, "|x-y|") + fmtTerm(b4, "|x+y|") + " &= " + toStringR(D4_1);
-    const eq4b = fmtLead(c4, "|x+y|") + fmtTerm(d4, "|x-y|") + " &= " + toStringR(D4_2);
+const D4_1 = normalize(add(mul(make(a4, 1), absXmY), mul(make(b4, 1), absXpY)));
+const D4_2 = normalize(add(mul(make(c4, 1), absXpY), mul(make(d4, 1), absXmY)));
 
-    // ==========================================
-    // SISTEM 5: Module "răutăcioase"
-    // ==========================================
-    const a5 = pickCoef();
-    const b5 = pickCoef();
-    const c5 = pickCoef();
-    const d5 = pickCoef();
+const eq4a = fmtLead(a4, "|x-y|") + fmtTerm(b4, "|x+y|") + " &= " + toStringR(D4_1);
+const eq4b = fmtLead(c4, "|x+y|") + fmtTerm(d4, "|x-y|") + " &= " + toStringR(D4_2);
+    /// ==========================================
+// SISTEM 5: Module "răutăcioase" (fracții corecte)
+// ==========================================
+const a5 = pickCoef();
+const b5 = pickCoef();
+const c5 = pickCoef();
+const d5 = pickCoef();
 
-    const absExpr1 = make(Math.abs(2 * X.num - Y.num), 1);
-    const absExpr2 = make(Math.abs(X.num + 3 * Y.num), 1);
+// |2x - y|
+const e1 = normalize(add(mul(make(2,1), X), mul(make(-1,1), Y)));
+const absExpr1 = make(Math.abs(e1.num), e1.den);
 
-    const D5_1 = normalize(add(mul(make(a5, 1), absExpr1), mul(make(b5, 1), absExpr2)));
-    const D5_2 = normalize(add(mul(make(c5, 1), absExpr1), mul(make(d5, 1), absExpr2)));
+// |x + 3y|
+const e2 = normalize(add(X, mul(make(3,1), Y)));
+const absExpr2 = make(Math.abs(e2.num), e2.den);
 
-    const eq5a = fmtLead(a5, "|2x-y|") + fmtTerm(b5, "|x+3y|") + " &= " + toStringR(D5_1);
-    const eq5b = fmtLead(c5, "|2x-y|") + fmtTerm(d5, "|x+3y|") + " &= " + toStringR(D5_2);
+const D5_1 = normalize(add(mul(make(a5, 1), absExpr1), mul(make(b5, 1), absExpr2)));
+const D5_2 = normalize(add(mul(make(c5, 1), absExpr1), mul(make(d5, 1), absExpr2)));
 
+const eq5a = fmtLead(a5, "|2x-y|") + fmtTerm(b5, "|x+3y|") + " &= " + toStringR(D5_1);
+const eq5b = fmtLead(c5, "|2x-y|") + fmtTerm(d5, "|x+3y|") + " &= " + toStringR(D5_2);
     // ==========================================
     // HTML pentru afișare (FĂRĂ soluție)
     // ==========================================
