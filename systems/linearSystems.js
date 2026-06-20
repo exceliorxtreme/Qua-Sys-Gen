@@ -61,15 +61,15 @@ export function generateLinearSystems(X, Y, Z){
     // SISTEM 1 — Random simplu
     // ============================================================
     const a1 = pickCoef(), b1 = pickCoef(), c1 = pickCoef();
-    const d1 = pickCoef(), e1 = pickCoef(), f1 = pickCoef();
+    const d1 = pickCoef(), e1c = pickCoef(), f1 = pickCoef();   // e1 -> e1c
     const g1 = pickCoef(), h1 = pickCoef(), i1 = pickCoef();
 
     const D1_1 = normalize(add(add(mul(make(a1,1), X), mul(make(b1,1), Y)), mul(make(c1,1), Z)));
-    const D1_2 = normalize(add(add(mul(make(d1,1), X), mul(make(e1,1), Y)), mul(make(f1,1), Z)));
+    const D1_2 = normalize(add(add(mul(make(d1,1), X), mul(make(e1c,1), Y)), mul(make(f1,1), Z))); // e1c
     const D1_3 = normalize(add(add(mul(make(g1,1), X), mul(make(h1,1), Y)), mul(make(i1,1), Z)));
 
     const eq1a = fmtLead(a1,"x") + fmtTerm(b1,"y") + fmtTerm(c1,"z") + " &= " + toStringR(D1_1);
-    const eq1b = fmtLead(d1,"x") + fmtTerm(e1,"y") + fmtTerm(f1,"z") + " &= " + toStringR(D1_2);
+    const eq1b = fmtLead(d1,"x") + fmtTerm(e1c,"y") + fmtTerm(f1,"z") + " &= " + toStringR(D1_2); // e1c
     const eq1c = fmtLead(g1,"x") + fmtTerm(h1,"y") + fmtTerm(i1,"z") + " &= " + toStringR(D1_3);
 
     // ============================================================
@@ -77,16 +77,16 @@ export function generateLinearSystems(X, Y, Z){
     // ============================================================
     const a2 = pickCoef(), b2 = pickCoef(), c2 = pickCoef();
     const d2 = 2 - a2;
-    const e2 = b2 - 2;
+    const e2c = b2 - 2;          // e2 -> e2c
     const f2 = c2 + 1;
 
     const D2_1 = normalize(add(add(mul(make(a2,1), X), mul(make(b2,1), Y)), mul(make(c2,1), Z)));
-    const D2_2 = normalize(add(add(mul(make(d2,1), X), mul(make(e2,1), Y)), mul(make(f2,1), Z)));
-    const D2_3 = normalize(add(add(mul(make(a2+d2,1), X), mul(make(b2-e2,1), Y)), mul(make(c2+f2,1), Z)));
+    const D2_2 = normalize(add(add(mul(make(d2,1), X), mul(make(e2c,1), Y)), mul(make(f2,1), Z))); // e2c
+    const D2_3 = normalize(add(add(mul(make(a2+d2,1), X), mul(make(b2-e2c,1), Y)), mul(make(c2+f2,1), Z))); // e2c
 
     const eq2a = fmtLead(a2,"x") + fmtTerm(b2,"y") + fmtTerm(c2,"z") + " &= " + toStringR(D2_1);
-    const eq2b = fmtLead(d2,"x") + fmtTerm(e2,"y") + fmtTerm(f2,"z") + " &= " + toStringR(D2_2);
-    const eq2c = fmtLead(a2+d2,"x") + fmtTerm(b2-e2,"y") + fmtTerm(c2+f2,"z") + " &= " + toStringR(D2_3);
+    const eq2b = fmtLead(d2,"x") + fmtTerm(e2c,"y") + fmtTerm(f2,"z") + " &= " + toStringR(D2_2); // e2c
+    const eq2c = fmtLead(a2+d2,"x") + fmtTerm(b2-e2c,"y") + fmtTerm(c2+f2,"z") + " &= " + toStringR(D2_3); // e2c
 
     // ============================================================
     // SISTEM 3 — Coeficienți legați
