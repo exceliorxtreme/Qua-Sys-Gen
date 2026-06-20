@@ -131,7 +131,7 @@ export function generateLinearSystems(X, Y, Z){
     const eq4b = fmtLead(s4,"|y-z|") + fmtTerm(t4,"|x-z|") + fmtTerm(u4,"|x-y|") + " &= " + toStringR(D4_2);
     const eq4c = fmtLead(v4,"|x-z|") + fmtTerm(w4,"|x-y|") + fmtTerm(z4,"|y-z|") + " &= " + toStringR(D4_3);
 
-    // ============================================================
+   
 // SISTEM 5 — Module „răutăcioase” (PATCH FRACTII)
 // ============================================================
 
