@@ -36,7 +36,15 @@
 "lin2x2_type2": "Sistem 2 (coeficienți variați: (2-a)x + by ; (b-2)x + cy)",
 "lin2x2_type3": "Sistem 3 (coeficienți legați: ax + by ; (a+k)x + (b-k)y)",
 "lin2x2_type4": "Sistem 4 (module simple: a|x-y| + b|x+y| ; c|x+y| + d|x-y|)",
-"lin2x2_type5": "Sistem 5 (module compuse: a|2x-y| + b|x+3y| ; c|2x-y| + d|x+3y|)"
+"lin2x2_type5": "Sistem 5 (module compuse: a|2x-y| + b|x+3y| ; c|2x-y| + d|x+3y|)",
+"lin3x3_tab": "Sisteme liniare 3×3",
+"lin3x3_title": "Sisteme liniare cu 3 ecuații și 3 necunoscute",
+"lin3x3_type1": "Sistem random",
+"lin3x3_type2": "Coeficienți jucați",
+"lin3x3_type3": "Coeficienți legați",
+"lin3x3_type4": "Module simple",
+"lin3x3_type5": "Module răutăcioase"
+
 
 
 

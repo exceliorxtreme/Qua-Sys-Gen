@@ -6,8 +6,12 @@ import { parseFraction } from "../core/fractions.js";
 import { exportLatex } from "../systems/homogeneous.js";
 import { generateSymmetricAdvanced } from "../systems/symmetricAdvanced.js";
 import { generateLinear2x2 } from "../systems/linear2x2.js";
+import { generateLinearSystems } from "../systems/linearSystems.js";
 
-export function loadMainModule(mode = "homogeneous"){
+export function loadMainModule(mode = "homogeneous") {
+
+    const showZ = (mode === "linearSystems");
+
     return `
         <div class="module-wrapper">
             <h2 data-i18n="inputXY">${t("inputXY")}</h2>
@@ -17,6 +21,7 @@ export function loadMainModule(mode = "homogeneous"){
             <div class="input-row">
                 <input id="inputX" class="input-box" placeholder="x">
                 <input id="inputY" class="input-box" placeholder="y">
+                ${ showZ ? `<input id="inputZ" class="input-box" placeholder="z">` : "" }
             </div>
 
             <button class="btn-generate" onclick="window.generateSystem('${mode}')" data-i18n="generate">
@@ -29,29 +34,41 @@ export function loadMainModule(mode = "homogeneous"){
 }
 
 window.generateSystem = function(mode){
+
     const X = parseFraction(document.getElementById("inputX").value);
     const Y = parseFraction(document.getElementById("inputY").value);
 
+    let Z = null;
+    if (mode === "linearSystems") {
+        Z = parseFraction(document.getElementById("inputZ").value);
+    }
+
     let result;
 
-    if(mode === "homogeneous"){
+    if (mode === "homogeneous") {
         result = generateHomogeneous(X, Y);
     }
 
-    if(mode === "symmetric"){
+    if (mode === "symmetric") {
         result = generateSymmetric(X, Y);
     }
 
-    if(mode === "linearQuadratic"){
+    if (mode === "linearQuadratic") {
         result = generateLinearQuadratic(X, Y);
     }
-    if(mode === "advanced"){
+
+    if (mode === "advanced") {
         result = generateSymmetricAdvanced(X, Y);
     }
 
-    if(mode === "linear2x2"){
-    result = generateLinear2x2(X, Y);
-}
+    if (mode === "linear2x2") {
+        result = generateLinear2x2(X, Y);
+    }
+
+    if (mode === "linearSystems") {
+        result = generateLinearSystems(X, Y, Z);
+    }
+
     document.getElementById("result").innerHTML = result.html;
 
     window._lastLatex = result.latex;
@@ -61,10 +78,9 @@ window.generateSystem = function(mode){
         btn.onclick = () => exportLatex(window._lastLatex);
     }
 
-    // Fix: Delay MathJax rendering until after DOM is fully updated
     setTimeout(() => {
-        if(window.MathJax && window.MathJax.typesetPromise){
-            MathJax.typesetPromise().catch((err) => console.log('Typeset failed:', err));
+        if (window.MathJax?.typesetPromise) {
+            MathJax.typesetPromise().catch(err => console.log("Typeset failed:", err));
         }
     }, 100);
 };

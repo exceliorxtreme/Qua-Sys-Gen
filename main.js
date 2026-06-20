@@ -56,6 +56,12 @@ function loadTab(tab){
     case "linear2x2":
     html = loadMainModule("linear2x2");
     break;
+
+    case "linearSystems":
+    html = loadMainModule("linearSystems");
+    break;
+
+
     
         default:
             html = "<h2>Tab necunoscut</h2>";

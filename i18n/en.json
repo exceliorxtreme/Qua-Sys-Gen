@@ -37,7 +37,15 @@
 "lin2x2_type2": "System 2 (varied coefficients: (2-a)x + by ; (b-2)x + cy)",
 "lin2x2_type3": "System 3 (linked coefficients: ax + by ; (a+k)x + (b-k)y)",
 "lin2x2_type4": "System 4 (simple modules: a|x-y| + b|x+y| ; c|x+y| + d|x-y|)",
-"lin2x2_type5": "System 5 (compound modules: a|2x-y| + b|x+3y| ; c|2x-y| + d|x+3y|)"
+"lin2x2_type5": "System 5 (compound modules: a|2x-y| + b|x+3y| ; c|2x-y| + d|x+3y|)",
+"lin3x3_tab": "Linear systems 3×3",
+"lin3x3_title": "Linear systems with 3 equations and 3 unknowns",
+"lin3x3_type1": "Random system",
+"lin3x3_type2": "Tweaked coefficients",
+"lin3x3_type3": "Linked coefficients",
+"lin3x3_type4": "Simple absolute values",
+"lin3x3_type5": "Nasty absolute values"
+
 
 
 
