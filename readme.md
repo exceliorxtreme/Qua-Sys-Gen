@@ -22,43 +22,45 @@ Proiectul generează automat sisteme omogene, simetrice și liniare‑pătratice
 - **Validări inteligente** (ex: `x, y ≠ 0` pentru fracții)
 - **Suport RO/EN** (i18n complet)
 ---
-~~~
-qua-sys-gen/
-│
-├── css/
-│   ├── layout.css
-│   └── components.css
-│
-├── data/
-│   └── coefficients.json
-│
+```
+Qua-Sys-Gen/
+├── .gitattributes
 ├── core/
 │   ├── engine.js
 │   ├── fractions.js
 │   ├── random.js
 │   └── utils.js
-│
-├── ui/
-│   └── mainModule.js
-│
-├── systems/
-│   ├── homogeneous.js
-│   ├── symmetric.js
-│   ├── linearQuadratic.js
-│   ├── symmetricAdvanced.js
-│   └── linear2x2.js
-│
+├── css/
+│   ├── components.css
+│   └── layout.css
+├── data/
+│   ├── coefficients.json
+│   └── examples.json
 ├── i18n/
+│   ├── en.json
 │   ├── i18n.js
-│   ├── ro.json
-│   └── en.json
-│
+│   └── ro.json
+├── index.html
 ├── lectii/
 │   └── lectia1.html
-│
-├── index.html
-└── README.md
+├── main.js
+├── readme.md
+├── systems/
+│   ├── homogeneous.js
+│   ├── linear2x2.js
+│   ├── linearQuadratic.js
+│   ├── linearSystems.js
+│   ├── mixed.js
+│   ├── nonlinear.js
+│   ├── symmetric.js
+│   └── symmetricAdvanced.js
+└── ui/
+    ├── components.js
+    ├── examMode.js
+    ├── mainModule.js
+    └── theme.js
 
+```
 
 ## 🛠 Tehnologii folosite
 
@@ -105,7 +107,7 @@ Poate fi compilat cu:
 - MiKTeX
 - Overleaf
 
-## 🧑‍🏫 Pentru profesori
+##  Pentru profesori
 
 - Coeficienți mici (±1…±9)
 - Soluții exacte
@@ -132,7 +134,7 @@ Poate fi compilat cu:
 Interfața nu afișează soluțiile sistemelor (pentru a păstra exercițiile curate),
 dar cei curioși le pot găsi în exportul LaTeX, ascunse ca și comentariu:
 
-% Soluție: (x, y)
+% Soluție: (x, y)----arată doar soluția generatoare, NU toate soluțiile!
 
 Dacă ai descoperit asta, felicitări — ai găsit Easter Egg-ul proiectului.
 ---
